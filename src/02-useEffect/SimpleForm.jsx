@@ -19,8 +19,17 @@ export const SimpleForm = () => {
 
     useEffect(() => {
       console.log('useEffect called!!')
-    },);
+    }, []);
+
+    useEffect(() => {
+        console.log('formDstate called!!')
+      }, [formState]);
+
+      useEffect(() => {
+        console.log('email called!!')
+      }, [email]);
     
+
 
 
 
