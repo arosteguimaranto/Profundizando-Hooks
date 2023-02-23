@@ -22,7 +22,7 @@ setState({
 
     setState({
         data,
-        isLoadingl: false,
+        isLoading: false,
         hasError: null,
     })
 }
