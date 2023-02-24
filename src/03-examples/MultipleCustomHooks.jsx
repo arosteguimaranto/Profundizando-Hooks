@@ -1,9 +1,12 @@
 import { useFetch } from "../hooks/useFetch"
-
+import { useCounter } from "../hooks/useCounter";
 
 export const MultipleCustomHooks = () => {
-    const { data, isLoading, hasError } = useFetch('https://rickandmortyapi.com/api/character/1');
+    const {counter, increment} = useCounter(1);
 
+    const { data, isLoading, hasError } = useFetch(`https://rickandmortyapi.com/api/character/${counter}`);
+    
+   
     
 
     return (
@@ -27,7 +30,10 @@ export const MultipleCustomHooks = () => {
                     )
             }
 
-            <button className=" btn btn-primary">
+            <button onClick={() => increment(1)}
+            className=" btn btn-primary"
+            disabled={isLoading}
+            >
             Next Character
             </button>
 
