@@ -1,15 +1,15 @@
 import React, { useReducer } from 'react'
-
+import{todoReducer} from '../08-useReducer/todoReducer'
 
 
 const initialState = [
     {
-        id: newDate().getTime(),
+        id: new Date().getTime(),
         description: 'Recolectar la piedra del alma',
         done: false,
 
     }, {
-        id: newDate().getTime() * 3,
+        id: new Date().getTime() * 3,
         description: 'Recolectar la piedra del alma',
         done: false,
     }
