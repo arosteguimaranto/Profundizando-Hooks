@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { FormWithCustomHook } from './02-useEffect/FormWithCustomHook';
+import { SimpleForm } from './02-useEffect/SimpleForm';
 //import { CallbackHook } from './06-memos/CallbackHook'
 import { Padre } from './07-tarea-memo/Padre'
 //import { MemoHook } from './06-memos/MemoHook'
