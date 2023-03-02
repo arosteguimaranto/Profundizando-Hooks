@@ -1,6 +1,8 @@
 import React, { useReducer } from 'react'
-import{todoReducer} from '../08-useReducer/todoReducer'
-
+import { todoReducer } from '../08-useReducer/todoReducer'
+import { TodoAdd } from './TodoAdd'
+import { TodoList } from './TodoList'
+import {useForm} from '../hooks/useForm.js'
 
 const initialState = [
     {
@@ -10,7 +12,7 @@ const initialState = [
 
     }, {
         id: new Date().getTime() * 3,
-        description: 'Recolectar la piedra del alma',
+        description: 'Recolectar la piedra del tiempo',
         done: false,
     }
 ]
@@ -18,8 +20,11 @@ const initialState = [
 
 export const TodoApp = () => {
 
-    const [state, dispatch] = useReducer(todoReducer, initialState);
+    const [todos, dispatch] = useReducer(todoReducer, initialState);
 
+    const handleNewTodo = (todo) => {
+        console.log({ todo });
+    }
 
     return (
         <>
@@ -27,34 +32,24 @@ export const TodoApp = () => {
             <hr />
 
             <div className=' row'>
-            <div className='col-7'>
-            <ul className=' list-group'>
-                <li className=' list-group-item'> 
-                <span className=' align-self-center'>Item 1 </span>
-                <button className=' btn btn-danger d-flex justify-content-between'>Borrar</button>
-                </li>
-            </ul>
-            </div>
+                <div className='col-7'>
 
-            <div className=' col-5'>
-                <h4> Agregar TODO </h4>
-                <hr />
-                <form>
-                <input
-                type="text"
-                placeholder='Que hay que hacer? '
-                className=' form-control'
-                />
+                    <TodoList
+                        todos={todos}
+                    />
+                </div>
 
-                <button
-                type="submit"
-                className=' btn btn-outline-primary mt-1'
-                > Agregar
-                </button>
-                </form>
+
+                <div className=' col-5'>
+                    <h4> Agregar TODO </h4>
+                    <hr />
+
+                    <TodoAdd onNewTodo={handleNewTodo} />
+
+
+                </div>
+
             </div>
-         
-        </div>
 
 
         </>
