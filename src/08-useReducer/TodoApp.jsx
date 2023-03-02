@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { todoReducer } from '../08-useReducer/todoReducer'
 import { TodoAdd } from './TodoAdd'
 import { TodoList } from './TodoList'
-import {useForm} from '../hooks/useForm.js'
+
 
 const initialState = [
     {
@@ -23,7 +23,11 @@ export const TodoApp = () => {
     const [todos, dispatch] = useReducer(todoReducer, initialState);
 
     const handleNewTodo = (todo) => {
-        console.log({ todo });
+        const action = {
+            type:'[TODO] Add Todo', 
+            payload: todo
+        }
+        dispatch(action);
     }
 
     return (
