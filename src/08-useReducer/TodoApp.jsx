@@ -5,16 +5,7 @@ import { TodoList } from './TodoList'
 
 
 const initialState = [
-    /*  {
-         id: new Date().getTime(),
-         description: 'Recolectar la piedra del alma',
-         done: false,
- 
-     }, {
-         id: new Date().getTime() * 3,
-         description: 'Recolectar la piedra del tiempo',
-         done: false,
-     } */
+   
 ]
 
 const init = () => {
@@ -39,9 +30,16 @@ export const TodoApp = () => {
         dispatch(action);
     }
 
+    const handleDeleteToDo=(id) => {
+         console.log({id});
+        
+        }
+    
+
+
     return (
         <>
-            <h1> TodoApp: 10  <small> Pendientes: 2</small></h1>
+            <h1> TodoApp: 10 <small> Pendientes: 2</small></h1>
             <hr />
 
             <div className=' row'>
@@ -49,6 +47,7 @@ export const TodoApp = () => {
 
                     <TodoList
                         todos={todos}
+                        onDeleteTodo={ handleDeleteToDo}
                     />
                 </div>
 
@@ -67,4 +66,5 @@ export const TodoApp = () => {
 
         </>
     )
-}
+
+    }
