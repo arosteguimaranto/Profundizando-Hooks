@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from 'react'
 import { todoReducer } from '../08-useReducer/todoReducer'
 import { TodoAdd } from './TodoAdd'
 import { TodoList } from './TodoList'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const initialState = [
@@ -31,9 +32,19 @@ export const TodoApp = () => {
     }
 
     const handleDeleteToDo=(id) => {
-         console.log({id});
-        
-        }
+         dispatch({
+            type: '[TODO] Remove Todo',
+            payload: id
+        });
+     }
+
+     const handleToggleTodo=(id) => {
+        dispatch({
+           type:'[TODO] Toggle Todo',
+           payload: id
+       });
+    }
+
     
 
 
@@ -48,6 +59,7 @@ export const TodoApp = () => {
                     <TodoList
                         todos={todos}
                         onDeleteTodo={ handleDeleteToDo}
+                        onToggleTodo={handleToggleTodo}
                     />
                 </div>
 
