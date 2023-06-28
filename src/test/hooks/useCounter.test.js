@@ -1,14 +1,15 @@
-import { renderHook } from '@testing-library/react';
-import {useCounter} from '../../hooks/useCounter';
+import { renderHook } from "@testing-library/react";
+import { useCounter } from '../../hooks/useCounter';
+
 
 describe('Pruebas en el useCounter', () => {
-    
-    test('debe de retornar los valores por defecto ', () => {
+    test('debe de retornar los valores por defecto', () => {
         
-/*         const {result} = renderHook( () => useCounter());
-        console.log(result) */
+        const {result} = renderHook(() => useCounter())
+        const {counter, increment, decrement, reset} = result.current;
 
+        expect(counter).toBe(10);
+        
 
     });
-
 });
