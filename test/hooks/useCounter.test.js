@@ -55,17 +55,18 @@ describe("Pruebas en el useCounter", () => {
 
 
   test('debe de volver al valor inicial', () => {
-    const { result } = renderHook(() => useCounter());
-    const { counter, decrement, reset } = result.current;
+    const { result } = renderHook(() => useCounter(100));
+    const { counter, decrement, reset} = result.current;
 
     act(() => {
 
       decrement();
-      reset()
+      reset();
+      
 
     })
 
-    expect(result.current.counter).toBe(10);
+    expect(result.current.counter).toBe(100);
 
   });
 
