@@ -19,12 +19,13 @@ import {BrowserRouter} from 'react-router-dom'
 import { MainApp } from './09-useContext/MainApp';
 //import { HooksApp } from './HooksApp'
 import './index.css';
+import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
  <BrowserRouter>
  
  {/* <React.StrictMode> */}
- <MainApp  />
+ <MultipleCustomHooks  />
 {/* </React.StrictMode> */}
 
  </BrowserRouter>
