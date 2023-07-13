@@ -1,36 +1,4 @@
-/* const { render, screen, } = require("@testing-library/react");
-import { TodoItem } from "../../src/08-useReducer/TodoItem";
 
-describe('Pruebas en <TodoItem/>', () => {
-
-
-    const todo = {
-        id: 1,
-        description: 'Piedra del Alma',
-
-    }
-
-    const onDeleteTodoMock = jest.fn();
-    const onToggleTodoMock = jest.fn();
-
-    beforeEach(() => jest.clearAllMocks());
-
-
-    test('debe de mostrar todo el pendiente de completar ', () => {
-
-        render(<TodoItem
-            todo={todo}
-            onToggleTodo={onToggleTodoMock}
-            onDeleteTodoMock={onDeleteTodoMock}
-        />
-        );
-
-        const liElement = screen.getByRole('listitem');
-
-        expect(liElement.classname).toBe('align-self-center')
-        screen.debug();
-    });
-}) */
 
 import { fireEvent, render, screen } from '@testing-library/react';
 import { TodoItem } from '../../src/08-useReducer/TodoItem';
