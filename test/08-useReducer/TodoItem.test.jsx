@@ -72,7 +72,7 @@ describe('Pruebas en <TodoItem />', () => {
 
     test('debe de mostrar el Todo completado', () => {
         
-        todo.done = true;
+        todo.done = true;   
 
         render( 
             <TodoItem 
